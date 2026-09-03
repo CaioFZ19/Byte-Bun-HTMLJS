@@ -2,11 +2,10 @@ require("dotenv").config()
 const express = require("express")
 const cors = require("cors")
 const app = express()
-
-app.use(cors())
-app.use(express.json())
-
 const FRONTEND_URL = "https://byte-bun-htmljs.onrender.com"
+
+app.use(cors({origin: FRONTEND_URL}))
+app.use(express.json())
 
 const cardapio = [
     { categoria: "pao", nome: "Frances", preco: 1.5 },
